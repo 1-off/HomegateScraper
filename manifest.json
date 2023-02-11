@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "homegate.ch Scraper",
+  "version": "1.0",
+  "description": "This addon scrap listings from homegate.ch",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "contextMenus",
+    "storage",
+    "tabs",
+    "menus"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.homegate.ch/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "Homegate Collector.",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "96": "icons/icon96.png"
+  }
+}
